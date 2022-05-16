@@ -1,6 +1,6 @@
 # starter-ts
 
-a ts starter by developer-plus .
+A ts starter by developer-plus.
 
 ## LICENSE
 
