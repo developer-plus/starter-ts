@@ -1,38 +1,24 @@
-name: CI
+name: ci
 
 on:
   push:
     branches:
       - main
-
   pull_request:
     branches:
       - main
 
 jobs:
-  lint:
+  ci:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
-      - name: Set node
-        uses: actions/setup-node@v3
+      - run: corepack enable
+      - uses: actions/setup-node@v3
         with:
-          node-version: 16.x
-
-      - name: Setup PNPM
-        uses: pnpm/action-setup@v2.2.1
-        with:
-          version: 7.1.0
-
-      - name: Install
-        run: pnpm install
-
-      - name: Lint
-        run: pnpm lint
-
-      - name: Test
-        run: pnpm test
-
-      - name: Build
-        run: pnpm build
+          node-version: 16
+          cache: 'pnpm'
+      - run: pnpm install
+      - run: pnpm lint
+      - run: pnpm build
+      - run: pnpm test
