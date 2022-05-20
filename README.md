@@ -4,4 +4,4 @@ A ts starter by developer-plus.
 
 ## LICENSE
 
-[MIT](./LICENSE) , made with 💗 .
+MIT, developer-plus made with 💗.
